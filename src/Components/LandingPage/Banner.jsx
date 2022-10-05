@@ -11,7 +11,7 @@ const Banner = () => {
         <div className='mt-[75px]'>
             <div className='lg:flex lg:justify-around lg:items-center text-center px-[100px] bg-white py-20'>
                 <div className='lg:w-[40%]'>
-                    <div className='text-center'>
+                    <div className='text-start'>
                         <h1 className='mb-5 font-mono uppercase font-bold lg:text-5xl md:text-2xl sm:text-lg block'>
                             welcome to life spring
                         </h1>
@@ -20,7 +20,7 @@ const Banner = () => {
                         </p>
                     </div>
                     <Link to='/'>
-                        <button className='w-[265px] text-center border-2 bg-[#106731] border-[#106731] rounded-lg py-3 px-4 uppercase font-semi-bold text-white block my-3 m-auto hover:bg-white hover:text-black hover:border-black'>
+                        <button className='w-[265px] text-center border-2 bg-[#106731] border-[#106731] rounded-lg py-3 px-4 uppercase font-semi-bold text-white block my-3 m-start hover:bg-white hover:text-black hover:border-black'>
                             book an appointment
                             <span className='ml-2'>
                                 <PanToolAltIcon />
@@ -28,7 +28,7 @@ const Banner = () => {
                         </button>
                     </Link>
                     <Link to='/'>
-                        <button className='w-[260px] text-center border-2 bg-[#106731] border-[#106731] rounded-lg py-3 px-4 uppercase font-semi-bold text-white block my-3 m-auto hover:bg-white hover:text-black hover:border-black'>
+                        <button className='w-[260px] text-center border-2 bg-[#106731] border-[#106731] rounded-lg py-3 px-4 uppercase font-semi-bold text-white block my-3 m-start hover:bg-white hover:text-black hover:border-black'>
                             enroll course
                             <span className='ml-2'>
                                 <PlayLessonIcon />
