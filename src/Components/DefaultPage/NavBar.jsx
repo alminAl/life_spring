@@ -11,8 +11,7 @@ const NavBar = () => {
         { name: 'COURSE', link: '/' },
         { name: 'BLOGS', link: '/' },
         { name: 'TESTIMONIAL', link: '/' },
-        { name: 'LOGIN', link: '/' },
-        { name: 'REGISTER', link: '/' }
+        { name: 'LOGIN/REGISTER', link: '/' },
     ];
     let [open, setOpen] = useState(false);
 
