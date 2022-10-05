@@ -1,10 +1,21 @@
 import React from 'react';
+import Banner from '../Components/LandingPage/Banner.jsx';
+import Blogs from '../Components/LandingPage/Blogs.jsx';
+import Courses from '../Components/LandingPage/Courses.jsx';
+import Professionals from '../Components/LandingPage/Professionals.jsx';
+import Services from '../Components/LandingPage/Services.jsx';
+import Testimonial from '../Components/LandingPage/Testimonial.jsx';
 
 const Home = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Banner />
+            <Courses />
+            <Professionals />
+            <Services />
+            <Testimonial/>
+            <Blogs/>
+        </>
     );
 };
 
