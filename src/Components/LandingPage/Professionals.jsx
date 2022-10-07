@@ -87,15 +87,15 @@ const Professionals = () => {
 
     return (
         <div className='py-20 bg-white'>
-            <div className='lg:mx-48 md:mx-20'>
-                <div className=' flex justify-between items-center mb-10'>
-                    <h3 className='text-3xl font-bold font-mono uppercase'>
+            <div className='space-y-10'>
+                <div className=' flex justify-between items-center'>
+                    <h3 className='text-xl sm:text-2xl lg:text-3xl font-extrabold font-mono uppercase'>
                         our{' '}
                         <span className='text-[#106731]'>professionals</span>
                     </h3>
                     <Link
                         to='/'
-                        className='border-[#106731] border-2 bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono hover:bg-white hover:text-black hover:border-black'>
+                        className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
                         view all
                     </Link>
                 </div>
@@ -103,8 +103,8 @@ const Professionals = () => {
                     {professionalList.map((item) => {
                         const { id, image, professionalName, role } = item;
                         return (
-                            <div key={id}>
-                                <div className='mx-4 my-2 shadow-md shadow-[rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px] rounded-md bg-white'>
+                            <div key={id} className='my-3'>
+                                <div className='mx-4 space-y-3 shadow-md drop-shadow-md rounded-md bg-white'>
                                     <div className='h-[180px]'>
                                         <img
                                             src={image}
@@ -112,15 +112,17 @@ const Professionals = () => {
                                             className='h-[180px] w-full rounded-tl-md rounded-tr-md'
                                         />
                                     </div>
-                                    <div className='p-3'>
-                                        <p>{role}</p>
-                                        <h3 className='overflow-auto text-lg font-bold my-3'>
+                                    <div className='p-3 space-y-3'>
+                                        <p className='text-[#106731] capitalize font-semibold text-base'>
+                                            {role}
+                                        </p>
+                                        <h3 className='overflow-auto capitalize font-semibold text-md lg:text-lg'>
                                             {professionalName}
                                         </h3>
 
                                         <Link
                                             to='/'
-                                            className='border-[#106731] border-2 bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block mt-3 hover:bg-white hover:text-black hover:border-black'>
+                                            className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
                                             appointment
                                         </Link>
                                     </div>

@@ -47,8 +47,8 @@ const Blogs = () => {
     };
     return (
         <div className='py-20'>
-            <div className='lg:mx-48 md:mx-20'>
-                <h3 className='text-3xl font-bold font-mono uppercase mb-10'>
+            <div className='space-y-10'>
+                <h3 className='text-xl sm:text-2xl lg:text-3xl font-extrabold font-mono uppercase'>
                     health <span className='text-[#106731]'>blogs</span>
                 </h3>
                 <Slider {...settings}>
@@ -56,9 +56,9 @@ const Blogs = () => {
                         const { id, image, blogTitle, blogDetail } = item;
                         const detailSlice = blogDetail.slice(0, 200);
                         return (
-                            <div>
+                            <div className='my-3'>
                                 <div
-                                    className='mx-4 my-2 shadow-md shadow-[rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px] rounded-md bg-white'
+                                    className='mx-4 space-y-3 shadow-md drop-shadow-md rounded-md bg-white'
                                     key={id}>
                                     <div className='h-[250px]'>
                                         <img
@@ -67,18 +67,18 @@ const Blogs = () => {
                                             className='h-[250px] w-full rounded-tl-md rounded-tr-md'
                                         />
                                     </div>
-                                    <div className='p-3'>
-                                        <h3 className='overflow-auto text-xl font-bold my-2 h-[60px]'>
+                                    <div className='p-3 space-y-3'>
+                                        <h3 className='overflow-auto capitalize text-lg sm:text-xl md:text-md lg:text-xl xl:text-xl font-bold h-[60px]'>
                                             {blogTitle}
                                         </h3>
 
-                                        <p className='my-4 block font-semibold'>
+                                        <p className='font-semibold'>
                                             {detailSlice}
                                         </p>
                                         <Link
                                             to='/'
-                                            className='border-[#106731] border-2 bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black'>
-                                            read more
+                                            className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
+                                            enroll now
                                         </Link>
                                     </div>
                                 </div>

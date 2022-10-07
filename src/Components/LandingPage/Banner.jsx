@@ -9,34 +9,31 @@ import { Carousel } from 'react-responsive-carousel';
 const Banner = () => {
     return (
         <div className='mt-[75px]'>
-            <div className='lg:flex lg:justify-around lg:items-center text-center px-[100px] bg-white py-20'>
-                <div className='lg:w-[40%]'>
-                    <div className='text-start'>
-                        <h1 className='mb-5 font-mono uppercase font-bold lg:text-5xl md:text-2xl sm:text-lg block'>
+            <div className='lg:flex lg:justify-around lg:items-center text-center bg-white py-20'>
+                <div className='w-full lg:w-[45%] text-center lg:text-start space-y-4'>
+                    <div className='space-y-4'>
+                        <h1 className='font-mono uppercase font-extrabold font-xl sm:text-3xl md:text-4xl lg:text-5xl block'>
                             welcome to life spring
                         </h1>
-                        <p className='my-5 font-mono capitalize text-2xl'>
+                        <p className='font-mono capitalize font-bold font-lg sm:text-xl lg:text-2xl'>
                             your best psychological advisor around the city
                         </p>
                     </div>
-                    <Link to='/'>
-                        <button className='w-[265px] text-center border-2 bg-[#106731] border-[#106731] rounded-lg py-3 px-4 uppercase font-semi-bold text-white block my-3 m-start hover:bg-white hover:text-black hover:border-black'>
-                            book an appointment
-                            <span className='ml-2'>
-                                <PanToolAltIcon />
-                            </span>
-                        </button>
-                    </Link>
-                    <Link to='/'>
-                        <button className='w-[260px] text-center border-2 bg-[#106731] border-[#106731] rounded-lg py-3 px-4 uppercase font-semi-bold text-white block my-3 m-start hover:bg-white hover:text-black hover:border-black'>
-                            enroll course
-                            <span className='ml-2'>
-                                <PlayLessonIcon />
-                            </span>
-                        </button>
-                    </Link>
+                    <div className='space-y-4 flex flex-col'>
+                        <Link to='/'>
+                            <button className='text-base uppercase text-white bg-[#106731] px-6 py-3 rounded-xl hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
+                                book an appointment
+                            </button>
+                        </Link>
+
+                        <Link to='/'>
+                            <button className='w-[229px] text-base uppercase text-white bg-[#106731] px-6 py-3 rounded-xl hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
+                                enroll course
+                            </button>
+                        </Link>
+                    </div>
                 </div>
-                <div className='lg:w-[55%] '>
+                <div className='lg:w-[55%] pt-10 sm:pt-10 lg:pt-0'>
                     <Carousel
                         autoPlay={true}
                         dynamicHeight={true}
@@ -51,8 +48,8 @@ const Banner = () => {
                             const { id, title, image } = item;
 
                             return (
-                                <div className='text-center' key={id}>
-                                    <h3 className='mb-5 font-mono uppercase font-bold lg:text-3xl md:text-2xl sm:text-lg block'>
+                                <div className='text-center space-y-4' key={id}>
+                                    <h3 className='text-mono font-extrabold uppercase text-2xl'>
                                         {title}
                                     </h3>
                                     <img src={image} alt='' />

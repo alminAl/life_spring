@@ -6,14 +6,14 @@ const Services = () => {
     const serviceLength = [1, 2, 3];
     return (
         <div className='py-20'>
-            <div className='lg:mx-48 md:mx-20'>
-                <h3 className='text-3xl font-bold font-mono uppercase mb-10'>
+            <div className='space-y-10'>
+                <h3 className='text-xl sm:text-2xl lg:text-3xl font-extrabold font-mono uppercase'>
                     our <span className='text-[#106731]'>services</span>
                 </h3>
-                <div className='flex flex-wrap justify-between'>
+                <div className='flex lg:flex-row gap-4'>
                     {serviceLength.map((item) => {
                         return (
-                            <div className='w-[30%] my-2 shadow-md shadow-[rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px] rounded-md bg-white'>
+                            <div className='sm:basis-2/6 lg:basis-3/6 space-y-3 shadow-md drop-shadow-md rounded-md bg-white text-center'>
                                 <div className='h-[220px]'>
                                     <img
                                         src='https://lifespringcdn.s3.amazonaws.com/wp-content/uploads/2022/01/a.png'
@@ -21,16 +21,16 @@ const Services = () => {
                                         className='h-[220px] w-full rounded-tl-md rounded-tr-md'
                                     />
                                 </div>
-                                <div className='p-3 text-center'>
-                                    <h3 className='overflow-auto text-2xl font-bold my-3'>
+                                <div className='p-3'>
+                                    <h3 className='overflow-auto capitalize font-semibold text-md lg:text-xl'>
                                         corporate services
                                     </h3>
                                 </div>
 
-                                <div className='border-t text-center '>
+                                <div className='border-t'>
                                     <Link
                                         to='/'
-                                        className='py-4 px-4 rounded-b-md capitalize font-mono block font-semibold text-lg hover:bg-slate-400'>
+                                        className='py-4 px-4 rounded-b-md capitalize font-mono block font-semibold text-md md:text-lg hover:bg-slate-400'>
                                         learn more
                                         <EastIcon className='ml-3' />
                                     </Link>

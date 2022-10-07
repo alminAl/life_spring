@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footers = () => {
     return (
         <div className='bg-[#106731]'>
-            <div className='py-20 lg:mx-48 md:mx-20 md:m-auto text-white lg:flex justify-evenly'>
+            <div className='py-20 px-3 sm:px-3.5 md:px-7 lg:px-14 xl:px-24 md:m-auto text-white lg:flex justify-between'>
                 <div className='text-start'>
                     <div className='mb-6'>
                         <h3 className='font-bold text-2xl'>

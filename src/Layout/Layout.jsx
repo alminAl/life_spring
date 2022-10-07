@@ -4,7 +4,7 @@ import NavBar from '../Components/DefaultPage/NavBar.jsx';
 
 const Layout = ({ children }) => {
     return (
-        <div>
+        <div className='px-3.5 md:px-7 lg:px-14 xl:px-24 bg-white'>
             <NavBar />
             <main>{children}</main>
             <Footers />

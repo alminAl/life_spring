@@ -17,7 +17,7 @@ const NavBar = () => {
 
     return (
         <div className=' w-full fixed top-0 left-0 z-10'>
-            <div className='font-bold font-mono lg:flex items-center justify-between bg-white py-2 lg:px-10 px-7'>
+            <div className='font-bold font-mono lg:flex items-center justify-between bg-white py-2 px-3 sm:px-3.5 md:px-7 lg:px-14 xl:px-24'>
                 <div>
                     <span>
                         <img src={brand} alt='brand img' className='w-44' />

@@ -20,14 +20,14 @@ const Testimonial = () => {
     };
     return (
         <div className='py-20 bg-white'>
-            <div className='lg:mx-48 md:mx-20'>
-                <div className=' flex justify-between items-center mb-10'>
-                    <h3 className='text-3xl font-bold font-mono uppercase'>
+            <div className='space-y-16'>
+                <div className=' flex justify-between items-center'>
+                    <h3 className='text-xl sm:text-2xl lg:text-3xl font-extrabold font-mono uppercase'>
                         clients <span className='text-[#106731]'>feedback</span>
                     </h3>
                     <Link
                         to='/'
-                        className='border-[#106731] border-2 bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono hover:bg-white hover:text-black hover:border-black'>
+                        className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
                         view all
                     </Link>
                 </div>
@@ -38,7 +38,7 @@ const Testimonial = () => {
                         return (
                             <div>
                                 <div
-                                    className='mx-4 my-2 bg-white text-center'
+                                    className='mx-4 bg-white text-center space-y-4'
                                     key={id}>
                                     <div className='h-[100px] w-[100px] m-auto rounded-full'>
                                         <img
@@ -47,8 +47,8 @@ const Testimonial = () => {
                                             className='h-[100px] w-[100px] rounded-full'
                                         />
                                     </div>
-                                    <div className='2xl:6/12 xl:w-8/12 lg:w-8/12 m-auto'>
-                                        <h3 className='overflow-auto text-xl font-bold my-3'>
+                                    <div className='2xl:6/12 xl:w-8/12 lg:w-8/12 m-auto space-y-3'>
+                                        <h3 className='overflow-auto text-md sm:text-lg lg:text-xl capitalize font-extrabold'>
                                             {clientName}
                                         </h3>
                                         <p>{review}</p>
