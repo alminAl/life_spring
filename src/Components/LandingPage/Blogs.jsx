@@ -48,7 +48,7 @@ const Blogs = () => {
     return (
         <div className='py-20'>
             <div className='space-y-10'>
-                <h3 className='text-xl sm:text-2xl lg:text-3xl font-extrabold font-mono uppercase'>
+                <h3 className='text-xl sm:text-2xl lg:text-3xl font-extrabold font-sans uppercase'>
                     health <span className='text-[#106731]'>blogs</span>
                 </h3>
                 <Slider {...settings}>

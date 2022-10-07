@@ -22,7 +22,7 @@ const Testimonial = () => {
         <div className='py-20 bg-white'>
             <div className='space-y-16'>
                 <div className=' flex justify-between items-center'>
-                    <h3 className='text-xl sm:text-2xl lg:text-3xl font-extrabold font-mono uppercase'>
+                    <h3 className='text-xl sm:text-2xl lg:text-3xl font-extrabold font-sans uppercase'>
                         clients <span className='text-[#106731]'>feedback</span>
                     </h3>
                     <Link

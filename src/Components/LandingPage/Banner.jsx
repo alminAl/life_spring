@@ -10,12 +10,12 @@ const Banner = () => {
     return (
         <div className='mt-[75px]'>
             <div className='lg:flex lg:justify-around lg:items-center text-center bg-white py-20'>
-                <div className='w-full lg:w-[45%] text-center lg:text-start space-y-4'>
-                    <div className='space-y-4'>
-                        <h1 className='font-mono uppercase font-extrabold font-xl sm:text-3xl md:text-4xl lg:text-5xl block'>
+                <div className='w-full lg:w-[45%] text-center lg:text-start space-y-10'>
+                    <div className='space-y-2'>
+                        <h1 className='font-sans text-gray-800 uppercase font-extrabold font-xl sm:text-3xl md:text-4xl lg:text-5xl block'>
                             welcome to life spring
                         </h1>
-                        <p className='font-mono capitalize font-bold font-lg sm:text-xl lg:text-2xl'>
+                        <p className='font-sans capitalize font-bold font-lg sm:text-xl lg:text-2xl'>
                             your best psychological advisor around the city
                         </p>
                     </div>
@@ -49,7 +49,7 @@ const Banner = () => {
 
                             return (
                                 <div className='text-center space-y-4' key={id}>
-                                    <h3 className='text-mono font-extrabold uppercase text-2xl'>
+                                    <h3 className='font-sans font-extrabold uppercase text-2xl'>
                                         {title}
                                     </h3>
                                     <img src={image} alt='' />
