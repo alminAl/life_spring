@@ -11,7 +11,7 @@ const NavBar = () => {
         { name: 'COURSE', link: '/' },
         { name: 'BLOGS', link: '/' },
         { name: 'TESTIMONIAL', link: '/' },
-        { name: 'LOGIN/REGISTER', link: '/' },
+        { name: 'LOGIN/REGISTER', link: '/' }
     ];
     let [open, setOpen] = useState(false);
 
@@ -40,7 +40,7 @@ const NavBar = () => {
                             className='lg:ml-8 text-base lg:my-0 my-7'>
                             <Link
                                 to={link.link}
-                                className='text-gray-800 hover:text-green-400 duration-200'>
+                                className='text-[#106731] duration-500 hover:text-black'>
                                 {link.name}
                             </Link>
                         </li>

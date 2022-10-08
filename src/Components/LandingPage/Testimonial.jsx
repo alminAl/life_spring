@@ -16,6 +16,7 @@ const Testimonial = () => {
         speed: 500,
         autoplaySpeed: 6000,
         pauseOnHover: false,
+        arrows: false,
         cssEase: 'linear'
     };
     return (
@@ -27,7 +28,7 @@ const Testimonial = () => {
                     </h3>
                     <Link
                         to='/'
-                        className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
+                        className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500'>
                         view all
                     </Link>
                 </div>
@@ -36,10 +37,8 @@ const Testimonial = () => {
                         const { id, image, clientName, review } = item;
                         // const detailSlice = blogDetail.slice(0, 200);
                         return (
-                            <div>
-                                <div
-                                    className='mx-4 bg-white text-center space-y-4'
-                                    key={id}>
+                            <div key={id}>
+                                <div className='mx-4 bg-white text-center space-y-4'>
                                     <div className='h-[100px] w-[100px] m-auto rounded-full'>
                                         <img
                                             src={image}

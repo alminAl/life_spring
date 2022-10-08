@@ -16,6 +16,7 @@ const Courses = () => {
         autoplaySpeed: 5000,
         pauseOnHover: false,
         cssEase: 'linear',
+        arrows: false,
         responsive: [
             {
                 breakpoint: 1200,
@@ -52,7 +53,7 @@ const Courses = () => {
                     </h3>
                     <Link
                         to='/'
-                        className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
+                        className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500'>
                         view all
                     </Link>
                 </div>
@@ -84,7 +85,7 @@ const Courses = () => {
                                         </h3>
                                         <Link
                                             to='/'
-                                            className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
+                                            className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500'>
                                             enroll now
                                         </Link>
                                     </div>

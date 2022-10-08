@@ -13,7 +13,9 @@ const Services = () => {
                 <div className='flex lg:flex-row gap-4'>
                     {serviceLength.map((item) => {
                         return (
-                            <div className='sm:basis-2/6 lg:basis-3/6 space-y-3 shadow-md drop-shadow-md rounded-md bg-white text-center'>
+                            <div
+                                className='sm:basis-2/6 lg:basis-3/6 space-y-3 shadow-md drop-shadow-md rounded-md bg-white text-center'
+                                key={item}>
                                 <div className='h-[220px]'>
                                     <img
                                         src='https://lifespringcdn.s3.amazonaws.com/wp-content/uploads/2022/01/a.png'
@@ -30,7 +32,7 @@ const Services = () => {
                                 <div className='border-t'>
                                     <Link
                                         to='/'
-                                        className='py-4 px-4 rounded-b-md capitalize font-mono block font-semibold text-md md:text-lg hover:bg-[#106731]'>
+                                        className='py-4 px-4 rounded-b-md capitalize font-mono block font-semibold text-md md:text-lg hover:bg-[#106731] hover:text-white hover:duration-500'>
                                         learn more
                                         <EastIcon className='ml-3' />
                                     </Link>

@@ -4,18 +4,20 @@ import blogList from '../../test/blogData.js';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import EastIcon from '@mui/icons-material/East';
 
 const Blogs = () => {
     const settings = {
         dots: true,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
         speed: 500,
         autoplaySpeed: 6000,
         pauseOnHover: false,
         cssEase: 'linear',
+        arrows: false,
         responsive: [
             {
                 breakpoint: 1400,
@@ -56,10 +58,8 @@ const Blogs = () => {
                         const { id, image, blogTitle, blogDetail } = item;
                         const detailSlice = blogDetail.slice(0, 200);
                         return (
-                            <div className='my-3'>
-                                <div
-                                    className='mx-4 space-y-3 shadow-md drop-shadow-md rounded-md bg-white'
-                                    key={id}>
+                            <div className='my-3' key={id}>
+                                <div className='mx-4 space-y-3 shadow-md drop-shadow-md rounded-md bg-white'>
                                     <div className='h-[250px]'>
                                         <img
                                             src={image}
@@ -77,8 +77,9 @@ const Blogs = () => {
                                         </p>
                                         <Link
                                             to='/'
-                                            className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
-                                            enroll now
+                                            className=' text-[#106731]  py-2 rounded-md capitalize font-mono inline-block hover:text-black hover:duration-500'>
+                                            read more
+                                            <EastIcon className='ml-2' />
                                         </Link>
                                     </div>
                                 </div>

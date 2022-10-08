@@ -7,7 +7,7 @@ const Footers = () => {
             <div className='py-20 text-white'>
                 <div className='text-center space-y-6'>
                     <div className='mb-6'>
-                        <h3 className='font-bold text-lg sm:text-xl md:text-2xl uppercase'>
+                        <h3 className='font-bold text-lg sm:text-xl md:text-2xl capitalize'>
                             LifeSpring Consultancy Limited
                         </h3>
                     </div>

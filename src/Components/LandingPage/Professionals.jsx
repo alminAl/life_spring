@@ -1,50 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import professionalList from '../../test/professional.js';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import EastIcon from '@mui/icons-material/East';
 
 const Professionals = () => {
-    function SampleNextArrow(props) {
-        const { className, style, onClick } = props;
-        return (
-            <div
-                className={className}
-                style={{
-                    ...style,
-                    display: 'block',
-                    background: '#2b2d42',
-                    width: '40px',
-                    height: '40px',
-                    padding: '10px',
-                    borderRadius: '5px',
-                    boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
-                }}
-                onClick={onClick}
-            />
-        );
-    }
+    const [sliderRef, setSliderRef] = useState(null);
 
-    function SamplePrevArrow(props) {
-        const { className, style, onClick } = props;
-        return (
-            <div
-                className={className}
-                style={{
-                    ...style,
-                    display: 'block',
-                    background: '#2b2d42',
-                    width: '40px',
-                    height: '40px',
-                    padding: '10px',
-                    borderRadius: '5px',
-                    boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
-                }}
-                onClick={onClick}
-            />
-        );
-    }
     const settings = {
         dots: false,
         infinite: true,
@@ -55,8 +21,7 @@ const Professionals = () => {
         // autoplaySpeed: 5000,
         pauseOnHover: false,
         cssEase: 'linear',
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
+        arrow: false,
         responsive: [
             {
                 breakpoint: 1200,
@@ -95,16 +60,16 @@ const Professionals = () => {
                     </h3>
                     <Link
                         to='/'
-                        className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
+                        className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500'>
                         view all
                     </Link>
                 </div>
-                <Slider {...settings}>
+                <Slider ref={setSliderRef} {...settings}>
                     {professionalList.map((item) => {
                         const { id, image, professionalName, role } = item;
                         return (
                             <div key={id} className='my-3'>
-                                <div className='mx-4 space-y-3 shadow-md drop-shadow-md rounded-md bg-white'>
+                                <div className='mx-3 space-y-3 shadow-md drop-shadow-md rounded-md bg-white'>
                                     <div className='h-[180px]'>
                                         <img
                                             src={image}
@@ -122,8 +87,9 @@ const Professionals = () => {
 
                                         <Link
                                             to='/'
-                                            className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black'>
+                                            className='bg-white text-[#106731]  py-2 font-semibold text-lg capitalize font-mono inline-block hover:text-black hover:origin-right hover:translate-x-2 hover:duration-500'>
                                             appointment
+                                            <EastIcon className='ml-2' />
                                         </Link>
                                     </div>
                                 </div>
@@ -131,6 +97,18 @@ const Professionals = () => {
                         );
                     })}
                 </Slider>
+                <div className='flex justify-end items-center space-x-3'>
+                    <button
+                        className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500'
+                        onClick={sliderRef?.slickPrev}>
+                        <ArrowBackIcon />
+                    </button>
+                    <button
+                        className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500'
+                        onClick={sliderRef?.slickNext}>
+                        <ArrowForwardIcon />
+                    </button>
+                </div>
             </div>
         </div>
     );
