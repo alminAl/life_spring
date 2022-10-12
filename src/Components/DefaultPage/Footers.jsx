@@ -31,20 +31,20 @@ const Footers = () => {
                             <FaFacebookF className='text-xl text-white' />
                         </a>
                     </div>
-                    <div className='flex justify-center items-center bg-[#0A66C2] rounded-full w-10 h-10'>
-                        <a
-                            href='https://www.linkedin.com/company/lifespring/'
-                            target='_blank'
-                            rel='noopener noreferrer'>
-                            <FaLinkedinIn className='text-xl text-white' />
-                        </a>
-                    </div>
                     <div className='flex justify-center items-center bg-[#f00c0c] rounded-full w-10 h-10'>
                         <a
                             href='https://www.youtube.com/channel/UCIhnNMshTmGQmkJaBLGe5aw'
                             target='_blank'
                             rel='noopener noreferrer'>
                             <FaYoutube className='text-xl text-white' />
+                        </a>
+                    </div>
+                    <div className='flex justify-center items-center bg-[#0A66C2] rounded-full w-10 h-10'>
+                        <a
+                            href='https://www.linkedin.com/company/lifespring/'
+                            target='_blank'
+                            rel='noopener noreferrer'>
+                            <FaLinkedinIn className='text-xl text-white' />
                         </a>
                     </div>
                 </div>
