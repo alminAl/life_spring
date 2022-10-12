@@ -11,7 +11,7 @@ const NavBar = () => {
         { name: 'COURSE', link: '/' },
         { name: 'BLOGS', link: '/' },
         { name: 'TESTIMONIAL', link: '/' },
-        { name: 'LOGIN/REGISTER', link: '/' }
+        { name: 'LOGIN/REGISTER', link: '/login' }
     ];
     let [open, setOpen] = useState(false);
 
@@ -31,9 +31,8 @@ const NavBar = () => {
                 </div>
 
                 <ul
-                    className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${
-                        open ? 'top-20 ' : 'top-[-490px]'
-                    }`}>
+                    className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'
+                        }`}>
                     {Links.map((link) => (
                         <li
                             key={link.name}
