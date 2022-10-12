@@ -1,6 +1,7 @@
 import React from 'react';
 import Footers from '../Components/DefaultPage/Footers.jsx';
 import NavBar from '../Components/DefaultPage/NavBar.jsx';
+import ScrollTop from '../Components/DefaultPage/ScrollTop.jsx';
 
 const Layout = ({ children }) => {
     return (
@@ -10,6 +11,7 @@ const Layout = ({ children }) => {
                 {children}
             </main>
             <Footers />
+            <ScrollTop/>
         </div>
     );
 };
