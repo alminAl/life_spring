@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import brand from '../../image/life_spring_logo.png.png';
+import brand from '../../image/life_spring_logo.png';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
@@ -18,21 +18,11 @@ const NavBar = () => {
     return (
         <div className=' w-full fixed top-0 left-0 z-10'>
             <div className='font-bold font-mono lg:flex items-center justify-between bg-white py-2 px-3 sm:px-3.5 md:px-7 lg:px-14 xl:px-24'>
-<<<<<<< HEAD
-                <div>
-                   <Link to="/">
-                   <span>
-                        <img src={brand} alt='brand img' className='w-44' />
-                    </span>
-                   </Link>
-                </div>
-=======
                 <Link to='/'>
                     <span>
                         <img src={brand} alt='brand img' className='w-44' />
                     </span>
                 </Link>
->>>>>>> c4d92cd780d449f6817ba9fe42442a47bfc39a3f
 
                 <div
                     onClick={() => setOpen(!open)}
@@ -42,11 +32,7 @@ const NavBar = () => {
 
                 <ul
                     className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${
-<<<<<<< HEAD
-                        open ? 'top-20 ' : 'top-[-490px]'
-=======
                         open ? 'top-16' : 'top-[-490px]'
->>>>>>> c4d92cd780d449f6817ba9fe42442a47bfc39a3f
                     }`}>
                     {Links.map((link) => (
                         <li
