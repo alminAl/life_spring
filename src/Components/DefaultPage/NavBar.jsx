@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import brand from '../../image/life_spring_logo.png';
+import brand from '../../image/life_spring_logo.png.png';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     let Links = [
-        { name: 'PROFESSIONALS', link: '/' },
+        { name: 'PROFESSIONALS', link: '/professionals' },
         { name: 'SERVICE', link: '/' },
         { name: 'COURSE', link: '/' },
         { name: 'BLOGS', link: '/' },
@@ -19,9 +19,11 @@ const NavBar = () => {
         <div className=' w-full fixed top-0 left-0 z-10'>
             <div className='font-bold font-mono lg:flex items-center justify-between bg-white py-2 px-3 sm:px-3.5 md:px-7 lg:px-14 xl:px-24'>
                 <div>
-                    <span>
+                   <Link to="/">
+                   <span>
                         <img src={brand} alt='brand img' className='w-44' />
                     </span>
+                   </Link>
                 </div>
 
                 <div
@@ -31,8 +33,9 @@ const NavBar = () => {
                 </div>
 
                 <ul
-                    className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'
-                        }`}>
+                    className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${
+                        open ? 'top-20 ' : 'top-[-490px]'
+                    }`}>
                     {Links.map((link) => (
                         <li
                             key={link.name}

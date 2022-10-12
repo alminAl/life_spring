@@ -59,7 +59,7 @@ const Professionals = () => {
                         <span className='text-[#106731]'>professionals</span>
                     </h3>
                     <Link
-                        to='/'
+                        to='/professionals'
                         className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500'>
                         view all
                     </Link>
