@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import BookAppointment from './Components/BookAppointment/BookAppointment.jsx';
+import Dashboard from './Components/Dashboard/Dashboard.jsx';
+import Profile from './Components/Dashboard/Profile.jsx';
 import Error from './Components/Error/Error.jsx';
 import Layout from './Layout/Layout.jsx';
 import Home from './Pages/Home.jsx';
@@ -23,6 +25,11 @@ function App() {
                             path='/bookAppointment/:professionalsId'
                             element={<BookAppointment />}
                         />
+
+                        {/* dashboard */}
+                        <Route path='life_spring_dashboard' element={<Dashboard/>}>
+                            <Route path='profile' element={<Profile/>} />
+                        </Route>
                     </Routes>
                 </Layout>
             </BrowserRouter>

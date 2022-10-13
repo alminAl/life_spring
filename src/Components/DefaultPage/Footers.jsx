@@ -85,7 +85,7 @@ const Footers = () => {
                 </div>
                 <div className='space-y-2'>
                     <span className='flex items-center space-x-2'>
-                        <FaPhoneVolume className='text-lg text-[#106731]'/>
+                        <FaPhoneVolume className='text-lg text-[#106731]' />
                         <span className='font-semibold'>: +88 123456789</span>
                     </span>
                     <span className='flex items-center space-x-2'>
