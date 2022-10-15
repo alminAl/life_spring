@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const BookAppointment = () => {
     const { professionalsId } = useParams();
-    const [professional2, setProfessionals2] = useState([]);
+    const [professional, setProfessionals] = useState([]);
     useEffect(() => {
         fetch(`/professionalsData.json`)
             .then((res) => res.json())
-            .then((data) => setProfessionals2(data));
+            .then((data) => setProfessionals(data));
     }, [professionalsId]);
-    const ExactService = professional2.filter(
-        (sr) => sr.id === professionalsId
-    );
+    const ExactService = professional.filter((sr) => sr.id === professionalsId);
     //     console.log(ExactService);
 
     return (
@@ -50,6 +49,14 @@ const BookAppointment = () => {
                                 Book Appointment
                             </button>
                         </div>
+                        <Link to='/professionals'>
+                            <div className='flex'>
+                                <span className='title-font font-medium text-3xl text-gray-900'></span>
+                                <button className='flex ml-auto text-white bg-[#B4C424] border-0 py-2 px-6 focus:outline-none hover:bg-[#808000] rounded mt-5'>
+                                    Back to Professionals
+                                </button>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>

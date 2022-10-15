@@ -22,7 +22,7 @@ const ProfessionalsComponent = ({ professionals }) => {
                     <p className='text-sm'>{description}</p>
                     <div className='mt-3 flex items-center'>
                         <Link
-                            to={`/bookAppointment/${id}`}
+                            to={`/professionals/bookAppointment/${id}`}
                             className='text-[#106731]  py-2 font-semibold text-lg capitalize font-mono inline-block hover:text-black'>
                             book appointment
                             <EastIcon className='ml-2' />

@@ -22,7 +22,7 @@ function App() {
                             element={<Professionals />}></Route>
                         <Route path='*' element={<Error />} />
                         <Route
-                            path='/bookAppointment/:professionalsId'
+                            path='/professionals/bookAppointment/:professionalsId'
                             element={<BookAppointment />}
                         />
 

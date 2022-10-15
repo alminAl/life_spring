@@ -86,7 +86,7 @@ const Professionals = () => {
                                         </h3>
 
                                         <Link
-                                            to='/'
+                                            to='/professionals'
                                             className='bg-white text-[#106731]  py-2 font-semibold text-lg capitalize font-mono inline-block hover:text-black hover:origin-right hover:translate-x-2 hover:duration-500'>
                                             appointment
                                             <EastIcon className='ml-2' />
