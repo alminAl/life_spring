@@ -10,8 +10,8 @@ const BookAppointment = () => {
             .then((res) => res.json())
             .then((data) => setProfessionals(data));
     }, [professionalsId]);
-    const ExactService = professional.filter((sr) => sr.id === professionalsId);
-    //     console.log(ExactService);
+    const Appointment = professional.filter((sr) => sr.id === professionalsId);
+    //     console.log(Appointment);
 
     return (
         <div style={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}>
@@ -21,8 +21,8 @@ const BookAppointment = () => {
                 <div className='lg:w-4/5 mx-auto flex flex-wrap'>
                     <img
                         alt='professionals_pic'
-                        className='lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded'
-                        src={ExactService[0]?.image}
+                        className='lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded-lg'
+                        src={Appointment[0]?.image}
                         style={{ cursor: 'auto' }}
                     />
                     <div
@@ -31,16 +31,16 @@ const BookAppointment = () => {
                         <h2
                             className='text-md title-font text-gray-900 tracking-widest'
                             style={{ cursor: 'auto' }}>
-                            {ExactService[0]?.title}
+                            {Appointment[0]?.title}
                         </h2>
                         <h1
                             className='text-gray-900 text-3xl title-font font-medium mb-1'
                             style={{ cursor: 'auto' }}>
-                            {ExactService[0]?.name}
+                            {Appointment[0]?.name}
                         </h1>
 
                         <p className='leading-relaxed mb-2'>
-                            {ExactService[0]?.description}
+                            {Appointment[0]?.description}
                         </p>
 
                         <div className='flex'>
