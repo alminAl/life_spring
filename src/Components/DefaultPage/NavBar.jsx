@@ -5,24 +5,26 @@ import brand from '../../image/life_spring_logo.png';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
+    const [open, setOpen] = useState(false);
+    const [loggedInUser, setLoggedInUser] = useState({ email: 'MAMUN' });
+
     let Links = [
-        { name: 'PROFESSIONALS', link: '/' },
+        { name: 'PROFESSIONALS', link: '/professionals' },
         { name: 'SERVICE', link: '/' },
         { name: 'COURSE', link: '/' },
         { name: 'BLOGS', link: '/' },
         { name: 'TESTIMONIAL', link: '/' },
-        { name: 'LOGIN/REGISTER', link: '/' }
+        { account: 'LOGIN/REGISTER', link: '/login' }
     ];
-    let [open, setOpen] = useState(false);
 
     return (
         <div className=' w-full fixed top-0 left-0 z-10'>
             <div className='font-bold font-mono lg:flex items-center justify-between bg-white py-2 px-3 sm:px-3.5 md:px-7 lg:px-14 xl:px-24'>
-                <div>
+                <Link to='/'>
                     <span>
                         <img src={brand} alt='brand img' className='w-44' />
                     </span>
-                </div>
+                </Link>
 
                 <div
                     onClick={() => setOpen(!open)}
@@ -32,19 +34,53 @@ const NavBar = () => {
 
                 <ul
                     className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${
-                        open ? 'top-20 ' : 'top-[-490px]'
+                        open ? 'top-16' : 'top-[-490px]'
                     }`}>
                     {Links.map((link) => (
                         <li
-                            key={link.name}
-                            className='lg:ml-8 text-base lg:my-0 my-7'>
-                            <Link
-                                to={link.link}
-                                className='text-[#106731] duration-500 hover:text-black'>
-                                {link.name}
-                            </Link>
+                            key={link.name || link.account}
+                            className='lg:ml-6 text-base lg:my-0 my-7'>
+                            {loggedInUser.email ? (
+                                <Link
+                                    to={link.link}
+                                    className='text-[#106731] duration-500 hover:text-black'>
+                                    {link.name}
+                                </Link>
+                            ) : (
+                                <>
+                                    <Link
+                                        to={link.link}
+                                        className='text-[#106731] duration-500 hover:text-black'>
+                                        {link.name}
+                                    </Link>
+                                    <Link
+                                        to={link.link}
+                                        className={
+                                            link.account === 'LOGIN/REGISTER'
+                                                ? 'border-2 text-[#106731] border-[#106731] px-4 py-2 rounded-lg uppercase hover:text-white hover:bg-[#106731] duration-200'
+                                                : 'text-[#106731] duration-500 hover:text-black'
+                                        }>
+                                        {link.account}
+                                    </Link>
+                                </>
+                            )}
                         </li>
                     ))}
+
+                    {loggedInUser.email && (
+                        <>
+                            <li className='lg:flex items-center space-x-3 text-base lg:my-0 my-7'>
+                                <span className='text-base  text-black font-sans'>
+                                    {loggedInUser.email}
+                                </span>
+                                <button
+                                    onClick={() => setLoggedInUser({})}
+                                    className='border-2 text-[#106731] border-[#106731] px-4 py-2 rounded-lg uppercase hover:text-white hover:bg-[#106731] duration-200'>
+                                    logout
+                                </button>
+                            </li>
+                        </>
+                    )}
                 </ul>
             </div>
         </div>
