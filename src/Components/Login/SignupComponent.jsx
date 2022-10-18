@@ -82,7 +82,7 @@ const SignupComponent = () => {
                                     className="input input-bordered w-full h-10 border-2 pl-1 rounded-lg" required />
                             </div>
 
-                            <input className='btn w-full mt-5 border-2 text-white hover:text-[#106731] font-bold px-4 py-2 rounded-lg uppercase bg-[#106731] hover:border-[#106731] hover:bg-white duration-200' disabled={isLoading} type="submit" value="Register" />
+                            <input className='btn w-full cursor-pointer mt-5 border-2 text-white hover:text-[#106731] font-bold px-4 py-2 rounded-lg uppercase bg-[#106731] hover:border-[#106731] hover:bg-white duration-200' disabled={isLoading} type="submit" value="Register" />
                             {error && <div className="text-red-500">{error}</div>}
                         </form>
                         <Link to='/login'><p className='text-lg lg:text-xl text-center font-bold mt-4'>Beck to Login</p></Link>
