@@ -7,6 +7,7 @@ import Layout from './Layout/Layout.jsx';
 import Home from './Pages/Home.jsx';
 import Login from './Pages/Login.jsx';
 import Professionals from './Pages/Professionals.jsx';
+import Signup from './Pages/Signup.jsx';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                         <Route path='/' element={<Home />} />
                         <Route index element={<Home />} />
                         <Route path='/login' element={<Login></Login>}></Route>
+                        <Route path='/signup' element={<Signup></Signup>}></Route>
                         <Route
                             path='/professionals'
                             element={<Professionals />}></Route>
