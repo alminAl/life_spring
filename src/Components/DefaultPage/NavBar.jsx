@@ -73,9 +73,7 @@ const NavBar = () => {
                     {user && (
                         <>
                             <li className='lg:flex items-center space-x-3 text-base lg:my-0 my-7'>
-                                <span className='text-base  text-black font-sans'>
-                                    
-                                </span>
+                                <span className='text-base  text-black font-sans'></span>
                                 <button
                                     onClick={() => logout()}
                                     className='border-2 text-[#106731] border-[#106731] px-4 py-2 rounded-lg uppercase hover:text-white hover:bg-[#106731] duration-200'>
