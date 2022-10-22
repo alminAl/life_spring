@@ -8,16 +8,16 @@ const Layout = ({ children }) => {
     const location = useLocation();
     return (
         <>
-            {location.pathname.includes('life_spring_dashboard') || <NavBar />}
+            {location.pathname.includes('dashboard') || <NavBar />}
 
             <main
                 className={
-                    location.pathname.includes('life_spring_dashboard') ||
+                    location.pathname.includes('dashboard') ||
                     'px-3.5 md:px-7 lg:px-14 xl:px-24 bg-white'
                 }>
                 {children}
             </main>
-            {location.pathname.includes('life_spring_dashboard') || <Footers />}
+            {location.pathname.includes('dashboard') || <Footers />}
             <ScrollTop />
         </>
     );
