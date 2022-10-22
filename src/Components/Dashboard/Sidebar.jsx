@@ -4,6 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
+import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -38,6 +39,11 @@ const Sidebar = () => {
                     <li>
                         <Link to='profile' className='flex items-center pl-4'>
                             <PersonIcon className='mr-2' /> Profile
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='courses' className='flex items-center pl-4'>
+                            <SubscriptionsIcon className='mr-2' /> Courses
                         </Link>
                     </li>
                 </div>

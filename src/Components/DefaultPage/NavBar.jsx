@@ -3,10 +3,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import brand from '../../image/life_spring_logo.png';
 import { Link } from 'react-router-dom';
+import { useLogout } from '../../hooks/useLogout';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 const NavBar = () => {
     const [open, setOpen] = useState(false);
-    const [loggedInUser, setLoggedInUser] = useState({ email: 'MAMUN' });
+    const { logout } = useLogout();
+    const { user } = useAuthContext();
 
     let Links = [
         { name: 'PROFESSIONALS', link: '/professionals' },
@@ -40,7 +43,7 @@ const NavBar = () => {
                         <li
                             key={link.name || link.account}
                             className='lg:ml-6 text-base lg:my-0 my-7'>
-                            {loggedInUser.email ? (
+                            {user ? (
                                 <Link
                                     to={link.link}
                                     className='text-[#106731] duration-500 hover:text-black'>
@@ -67,14 +70,12 @@ const NavBar = () => {
                         </li>
                     ))}
 
-                    {loggedInUser.email && (
+                    {user && (
                         <>
                             <li className='lg:flex items-center space-x-3 text-base lg:my-0 my-7'>
-                                <span className='text-base  text-black font-sans'>
-                                    {loggedInUser.email}
-                                </span>
+                                <span className='text-base  text-black font-sans'></span>
                                 <button
-                                    onClick={() => setLoggedInUser({})}
+                                    onClick={() => logout()}
                                     className='border-2 text-[#106731] border-[#106731] px-4 py-2 rounded-lg uppercase hover:text-white hover:bg-[#106731] duration-200'>
                                     logout
                                 </button>
