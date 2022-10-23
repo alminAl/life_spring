@@ -17,7 +17,7 @@ const CourseDetails = () => {
             console.log(course);
         };
         fetcher();
-    }, []);
+    }, [course, id]);
     return (
         <div className='grid grid-row-3 grid-flow-cols gap-4 p-12 bg-slate-600'>
             <Card>

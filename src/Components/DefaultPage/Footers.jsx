@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 const Footers = () => {
     return (
+
         <div className='grid lg:grid-cols-3 md:grid-cols-1 px-3.5 md:px-7 lg:px-14 xl:px-24 lg:space-x-20 md:space-x-0 md:space-y-5 py-20 bg-zinc-100'>
             <div className='space-y-5'>
                 <img src={brand} alt='' className='w-48' />
@@ -97,6 +98,7 @@ const Footers = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

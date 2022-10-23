@@ -1,7 +1,7 @@
 import React from 'react'
 import ProfessionalComponent from '../Components/ProfessionalsComponent/ProfessionalComponent'
 
-const Professionals = () => {
+const ProfessionalsPage = () => {
   return (
     <div>
      <ProfessionalComponent/>
@@ -9,4 +9,4 @@ const Professionals = () => {
   )
 }
 
-export default Professionals
+export default ProfessionalsPage

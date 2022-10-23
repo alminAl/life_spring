@@ -18,7 +18,7 @@ const Courses = () => {
             console.log(courseList);
         };
         fetcher();
-    }, []);
+    }, [courseList]);
 
     return (
         <div className='grid grid-cols-3 grid-flow-row gap-4 p-12 bg-slate-600'>

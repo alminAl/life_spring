@@ -1,16 +1,14 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import BookAppointment from './Components/BookAppointment/BookAppointment.jsx';
-import CourseDetails from './Components/Dashboard/CourseDetails.jsx';
-import Courses from './Components/Dashboard/Courses.jsx';
-import Dashboard from './Components/Dashboard/Dashboard.jsx';
-import Profile from './Components/Dashboard/Profile.jsx';
-import Error from './Components/Error/Error.jsx';
+import Error from './Pages/Error.jsx';
 import { useAuthContext } from './hooks/useAuthContext.jsx';
 import Layout from './Layout/Layout.jsx';
 import Home from './Pages/Home.jsx';
 import Login from './Pages/Login.jsx';
-import Professionals from './Pages/Professionals.jsx';
 import Signup from './Pages/Signup.jsx';
+import Dashboard from './Pages/dashboard/Dashboard.jsx';
+import Profile from './Pages/dashboard/Profile.jsx';
+import ProfessionalsPage from './Pages/ProfessionalsPage.jsx';
+
 
 function App() {
     const { user } = useAuthContext();
@@ -19,18 +17,35 @@ function App() {
             <BrowserRouter>
                 <Layout>
                     <Routes>
+                      
                         <Route path='/' element={<Home />} />
+                        <Route path='/professionals' element={<ProfessionalsPage />} />
+                        <Route path='/professionals/:id' element={<ProfessionalsPage />} />
+
+                        
                         <Route
                             path='/login'
-                            element={
-                                !user ? <Login /> : <Navigate to='/dashboard/profile' />
-                            }></Route>
+                            element={!user ? <Login /> : <Navigate to='/' />}
+                        />
                         <Route
                             path='/signup'
-                            element={
-                                !user ? <Signup /> : <Navigate to='/dashboard/profile' />
-                            }></Route>
+                            element={!user ? <Signup /> : <Navigate to='/' />}
+                        />
+
                         <Route
+                            path='dashboard'
+                            element={
+                                user ? <Dashboard /> : <Navigate to='/login' />
+                            }>
+                            <Route path='profile' element={<Profile />} />
+                            {/* <Route path='courses' element={user ? <Courses /> : <Navigate to='/login' />} /> */}
+                            {/* <Route
+                                path='courses/:id'
+                                element={user ? <CourseDetails /> : <Navigate to='/login' />}
+                            /> */}
+                        </Route>
+
+                        {/* <Route
                             path='/professionals'
                             element={
                                 user ? (
@@ -38,9 +53,10 @@ function App() {
                                 ) : (
                                     <Navigate to='/login' />
                                 )
-                            }></Route>
+                            }
+                        /> */}
 
-                        <Route
+                        {/* <Route
                             path='/professionals/bookAppointment/:professionalsId'
                             element={
                                 user ? (
@@ -49,21 +65,8 @@ function App() {
                                     <Navigate to='/login' />
                                 )
                             }
-                        />
+                        /> */}
 
-                        {/* dashboard */}
-                        <Route
-                            path='dashboard'
-                            element={
-                                user ? <Dashboard /> : <Navigate to='/login' />
-                            }>
-                            <Route path='profile' element={user ? <Profile /> : <Navigate to='/login' />} />
-                            <Route path='courses' element={user ? <Courses /> : <Navigate to='/login' />} />
-                            <Route
-                                path='courses/:id'
-                                element={user ? <CourseDetails /> : <Navigate to='/login' />}
-                            />
-                        </Route>
                         <Route path='*' element={<Error />} />
                     </Routes>
                 </Layout>
