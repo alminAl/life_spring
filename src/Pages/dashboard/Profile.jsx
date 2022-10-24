@@ -14,6 +14,11 @@ const Profile = () => {
     );
 
     const [open, setOpen] = useState(false)
+
+   
+
+  
+
     return (
         <>
             <div className='lg:w-9/12 m-auto space-y-6 px-4'>
