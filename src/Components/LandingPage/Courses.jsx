@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import courseList from '../../test/courses.js';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import EnrollModal from '../Enroll/EnrollModal.jsx';
 
 const Courses = () => {
     const settings = {
@@ -44,6 +45,8 @@ const Courses = () => {
             }
         ]
     };
+
+    const [open, setOpen] = useState(false)
     return (
         <div className='py-20'>
             <div className='space-y-10'>
@@ -83,14 +86,27 @@ const Courses = () => {
                                         <h3 className='block font-semibold text-sm lg:text-lg'>
                                             price: {price} tk.
                                         </h3>
-                                        <Link
+                                        {/* <Link
                                             to='/'
                                             className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500'>
                                             enroll now
-                                        </Link>
+                                        </Link> */}
+
+
+
+                                        <button
+                                            onClick={() => setOpen(!open)}
+                                            className='bg-[#106731] text-white  py-2 px-4 rounded-md capitalize font-mono inline-block hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500'>
+                                            enroll now
+
+                                        </button>
+
                                     </div>
                                 </div>
+                                <EnrollModal open={open} setOpen={x => setOpen(x)} />
                             </div>
+
+
                         );
                     })}
                 </Slider>

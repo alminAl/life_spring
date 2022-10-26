@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import banner_data from '../../test/bannerData.js';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
+import EnrollModal from '../Enroll/EnrollModal.jsx';
 
 const Banner = () => {
+    const [open, setOpen] = useState(false)
     return (
         <div className='mt-[75px]'>
             <div className='lg:flex lg:justify-around lg:items-center text-center bg-white py-20'>
@@ -25,11 +27,12 @@ const Banner = () => {
                         </Link>
 
                         <Link to='/'>
-                            <button className='w-[229px] text-base uppercase text-white bg-[#106731] px-6 py-3 rounded-xl hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500'>
+                            <button onClick={() => setOpen(!open)} className='w-[229px] text-base uppercase text-white bg-[#106731] px-6 py-3 rounded-xl hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500'>
                                 enroll course
                             </button>
                         </Link>
                     </div>
+                    <EnrollModal open={open} setOpen={x => setOpen(x)} />
                 </div>
                 <div className='lg:w-[55%] pt-10 sm:pt-10 lg:pt-0'>
                     <Carousel
