@@ -7,11 +7,11 @@ import { useLogout } from '../../hooks/useLogout';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { Avatar, MenuItem } from '@mui/material';
 import useProfileStore from '../../store/useProfileStore';
-import shallow from "zustand/shallow";
+import shallow from 'zustand/shallow';
 
 const NavBar = () => {
     // glabal storage
-     const [userProfile] = useProfileStore(
+    const [userProfile] = useProfileStore(
         (state) => [state.userProfile],
         shallow
     );
@@ -27,8 +27,6 @@ const NavBar = () => {
         { name: 'TESTIMONIAL', link: '/' },
         { account: 'LOGIN/REGISTER', link: '/login' }
     ];
-
-    
 
     return (
         <div className=' w-full fixed top-0 left-0 z-10'>
@@ -46,8 +44,9 @@ const NavBar = () => {
                 </div>
 
                 <ul
-                    className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-16' : 'top-[-490px]'
-                        }`}>
+                    className={`lg:flex lg:items-center lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto z-[-1] left-0 w-full lg:w-auto lg:pl-0 pl-9 transition-all duration-500 ease-in ${
+                        open ? 'top-16' : 'top-[-490px]'
+                    }`}>
                     {Links.map((link) => (
                         <li
                             key={link.name || link.account}
@@ -81,9 +80,17 @@ const NavBar = () => {
 
                     {user && userProfile && (
                         <>
-                            <Link to={"/dashboard/profile"}>
+                            <Link to={'/dashboard/profile'}>
                                 <MenuItem className='hover:bg-transparent'>
-                                    <Avatar alt={userProfile?.name} src={userProfile?.profile_image ? userProfile?.profile_image : "#"} /> <span>{userProfile?.name}</span>
+                                    <Avatar
+                                        alt={userProfile?.name}
+                                        src={
+                                            userProfile?.profile_image
+                                                ? userProfile?.profile_image
+                                                : '#'
+                                        }
+                                    />{' '}
+                                    <span>{userProfile?.name}</span>
                                 </MenuItem>
                             </Link>
                             <li className='lg:flex items-center space-x-3 text-base lg:my-0 my-7'>
@@ -98,7 +105,7 @@ const NavBar = () => {
                     )}
                 </ul>
             </div>
-        </div >
+        </div>
     );
 };
 

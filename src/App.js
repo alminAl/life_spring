@@ -8,7 +8,8 @@ import Signup from './Pages/Signup.jsx';
 import Dashboard from './Pages/dashboard/Dashboard.jsx';
 import Profile from './Pages/dashboard/Profile.jsx';
 import ProfessionalsPage from './Pages/ProfessionalsPage.jsx';
-
+import Courses from './Pages/dashboard/Courses.jsx';
+import CourseDetails from './Pages/dashboard/CourseDetails';
 
 function App() {
     const { user } = useAuthContext();
@@ -17,12 +18,16 @@ function App() {
             <BrowserRouter>
                 <Layout>
                     <Routes>
-                      
                         <Route path='/' element={<Home />} />
-                        <Route path='/professionals' element={<ProfessionalsPage />} />
-                        <Route path='/professionals/:id' element={<ProfessionalsPage />} />
+                        <Route
+                            path='/professionals'
+                            element={<ProfessionalsPage />}
+                        />
+                        <Route
+                            path='/professionals/:id'
+                            element={<ProfessionalsPage />}
+                        />
 
-                        
                         <Route
                             path='/login'
                             element={!user ? <Login /> : <Navigate to='/' />}
@@ -38,11 +43,26 @@ function App() {
                                 user ? <Dashboard /> : <Navigate to='/login' />
                             }>
                             <Route path='profile' element={<Profile />} />
-                            {/* <Route path='courses' element={user ? <Courses /> : <Navigate to='/login' />} /> */}
-                            {/* <Route
+                            <Route
+                                path='courses'
+                                element={
+                                    user ? (
+                                        <Courses />
+                                    ) : (
+                                        <Navigate to='/login' />
+                                    )
+                                }
+                            />
+                            <Route
                                 path='courses/:id'
-                                element={user ? <CourseDetails /> : <Navigate to='/login' />}
-                            /> */}
+                                element={
+                                    user ? (
+                                        <CourseDetails />
+                                    ) : (
+                                        <Navigate to='/login' />
+                                    )
+                                }
+                            />
                         </Route>
 
                         {/* <Route

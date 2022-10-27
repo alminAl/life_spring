@@ -11,7 +11,9 @@ const CourseDetails = () => {
 
     useEffect(() => {
         const fetcher = async () => {
-            const res = await fetch(`http://localhost:4000/api/courses/${id}`);
+            const res = await fetch(
+                `${process.env.REACT_APP_API_BASE_URL}/api/courses/${id}`
+            );
             const data = await res.json();
             setCourse(data.courses);
             console.log(course);
