@@ -10,7 +10,7 @@ import Profile from './Pages/dashboard/Profile.jsx';
 import ProfessionalsPage from './Pages/ProfessionalsPage.jsx';
 import Courses from './Pages/dashboard/Courses.jsx';
 import CourseDetails from './Pages/dashboard/CourseDetails';
-
+import BookAppointment from "./Components/BookAppointment/BookAppointment.jsx"
 function App() {
     const { user } = useAuthContext();
     return (
@@ -24,8 +24,8 @@ function App() {
                             element={<ProfessionalsPage />}
                         />
                         <Route
-                            path='/professionals/:id'
-                            element={<ProfessionalsPage />}
+                            path='/professionals/bookAppointment/:professionalsId'
+                            element={<BookAppointment />}
                         />
 
                         <Route
