@@ -42,6 +42,7 @@ export const AuthContextProvider = ({ children }) => {
         if (state?.user && !Boolean(data)) {
             getData('/api/user/profile/', state?.user.token)
             
+            
         }
         if(data) {
             setUserProfile(data)

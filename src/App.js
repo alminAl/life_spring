@@ -39,6 +39,14 @@ function App() {
                         />
 
                         <Route
+                            path='/profile'
+                            element={
+                                user ? <Profile /> : <Navigate to='/login' />
+                            
+                            }
+                        />
+
+                        {/* <Route
                             path='dashboard'
                             element={
                                 user ? <Dashboard /> : <Navigate to='/login' />
@@ -75,7 +83,7 @@ function App() {
                                     )
                                 }
                             />
-                        </Route>
+                        </Route> */}
 
                         {/* <Route
                             path='/professionals'

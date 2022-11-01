@@ -80,7 +80,7 @@ const NavBar = () => {
 
                     {user && userProfile && (
                         <>
-                            <Link to={'/dashboard/profile'}>
+                            <Link to={'/profile'}>
                                 <MenuItem className='hover:bg-transparent'>
                                     <Avatar
                                         alt={userProfile?.name}
