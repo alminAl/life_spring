@@ -7,11 +7,11 @@ import Login from './Pages/Login.jsx';
 import Signup from './Pages/Signup.jsx';
 import Dashboard from './Pages/dashboard/Dashboard.jsx';
 import Profile from './Pages/dashboard/Profile.jsx';
+import PsychiatristDashboard from './Pages/dashboard/PsychiatristDashboard';
 import ProfessionalsPage from './Pages/ProfessionalsPage.jsx';
 import Courses from './Pages/dashboard/Courses.jsx';
 import CourseDetails from './Pages/dashboard/CourseDetails';
 import BookAppointment from './Components/BookAppointment/BookAppointment.jsx';
-import PsychiatristDashboard from './Pages/dashboard/PsychiatristDashboard.jsx';
 function App() {
     const { user } = useAuthContext();
     return (
@@ -42,7 +42,16 @@ function App() {
                             path='/profile'
                             element={
                                 user ? <Profile /> : <Navigate to='/login' />
-                            
+                            }
+                        />
+                        <Route
+                            path='/psychiatristDashboard'
+                            element={
+                                user ? (
+                                    <PsychiatristDashboard />
+                                ) : (
+                                    <Navigate to='/login' />
+                                )
                             }
                         />
 

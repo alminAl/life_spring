@@ -40,14 +40,14 @@ const Dashboard = () => {
                     value={value}
                     onChange={handleChange}
                     aria-label='nav tabs example'>
-                    <LinkTab label='Profile' href='/dashboard/profile' />
+                    <LinkTab label='Profile' href='/profile' />
 
-                    { userProfile?.isPsychiatrist && (
+                    {/* {userProfile?.isPsychiatrist && (
                         <LinkTab
                             label='Psychiatrist Dashboard'
-                            href='psychiatristDashboard'
+                            href='/psychiatristDashboard'
                         />
-                    )}
+                    )} */}
                 </Tabs>
             </Box>
 
