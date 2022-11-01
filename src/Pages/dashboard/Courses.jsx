@@ -18,11 +18,9 @@ const Courses = () => {
             );
             const data = await res.json();
             setCourseList(data);
-            // console.log(data)
         };
         fetcher();
     }, []);
-    // console.log(courseList)
 
     return (
         <div className='grid grid-cols-5 grid-flow-row gap-4 p-12'>
