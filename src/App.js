@@ -10,7 +10,8 @@ import Profile from './Pages/dashboard/Profile.jsx';
 import ProfessionalsPage from './Pages/ProfessionalsPage.jsx';
 import Courses from './Pages/dashboard/Courses.jsx';
 import CourseDetails from './Pages/dashboard/CourseDetails';
-import BookAppointment from "./Components/BookAppointment/BookAppointment.jsx"
+import BookAppointment from './Components/BookAppointment/BookAppointment.jsx';
+import PsychiatristDashboard from './Pages/dashboard/PsychiatristDashboard.jsx';
 function App() {
     const { user } = useAuthContext();
     return (
@@ -58,6 +59,17 @@ function App() {
                                 element={
                                     user ? (
                                         <CourseDetails />
+                                    ) : (
+                                        <Navigate to='/login' />
+                                    )
+                                }
+                            />
+
+                            <Route
+                                path='psychiatristDashboard'
+                                element={
+                                    user ? (
+                                        <PsychiatristDashboard />
                                     ) : (
                                         <Navigate to='/login' />
                                     )

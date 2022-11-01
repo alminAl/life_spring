@@ -6,18 +6,23 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import defaultImage from '../../image/default.jpeg';
 
 const Courses = () => {
     const [courseList, setCourseList] = useState([]);
 
     useEffect(() => {
         const fetcher = async () => {
-            const res = await fetch('http://localhost:4000/api/courses/');
+            const res = await fetch(
+                `${process.env.REACT_APP_API_BASE_URL}/api/courses/all`
+            );
             const data = await res.json();
-            setCourseList(data.courses);
+            setCourseList(data);
+            // console.log(data)
         };
         fetcher();
     }, []);
+    // console.log(courseList)
 
     return (
         <div className='grid grid-cols-5 grid-flow-row gap-4 p-12'>
@@ -26,7 +31,7 @@ const Courses = () => {
                     <CardMedia
                         component='img'
                         height='140'
-                        image={course.image}
+                        image={course.image ? course.image : defaultImage}
                         alt='image'
                     />
                     <div className=''>
@@ -35,15 +40,20 @@ const Courses = () => {
                                 gutterBottom
                                 variant='h5'
                                 component='div'>
-                                {course.professionalName}
+                                {course.title}
                             </Typography>
                             <Typography variant='body2' color='text.secondary'>
-                                {course.role}
+                                {course.description}
+                            </Typography>
+                            <Typography variant='body2' color='text.secondary'>
+                                {course.duration}
                             </Typography>
                         </CardContent>
                         <CardActions>
                             <Button size='small' className='font-bold'>
-                                <Link to={`/courses/${course._id}`}>Learn More</Link>
+                                <Link to={`/courses/${course._id}`}>
+                                    Learn More
+                                </Link>
                             </Button>
                         </CardActions>
                     </div>
