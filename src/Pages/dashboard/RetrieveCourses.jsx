@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 const RetrieveCourses = () => {
     const [courses, setCourses] = useState([]);
+    const [items, setItems] = useState([]);
+    const { user } = useAuthContext();
+    const token = user.token;
 
     // GET COURSES
     useEffect(() => {
-        const url = `${process.env.REACT_APP_API_BASE_URL}/api/courses/all`;
-        fetch(url)
+        const url = `${process.env.REACT_APP_API_BASE_URL}/api/courses/`;
+        fetch(url, {
+            headers: {
+                Authorization: 'Bearer ' + token,
+                'content-type': 'application/json'
+            }
+        })
             .then((res) => res.json())
             .then((data) => {
                 setCourses(data);
@@ -20,14 +29,18 @@ const RetrieveCourses = () => {
         if (proceed) {
             const url = `${process.env.REACT_APP_API_BASE_URL}/api/courses/${id}`;
             fetch(url, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    Authorization: 'Bearer ' + token,
+                    'content-type': 'application/json'
+                }
             })
                 .then((res) => res.json())
                 .then((data) => {
                     alert('deleted successfully');
                     const remaining = items.filter((item) => item._id !== id);
                     window.location.reload();
-                    setCourses(remaining);
+                    setItems(remaining);
                 });
         }
     };
@@ -43,8 +56,12 @@ const RetrieveCourses = () => {
                     <table className='table-auto hover:table-fixed border-collapse border border-slate-500'>
                         <thead>
                             <tr>
-                                <th className='border border-slate-700'>Title</th>
-                                <th className='border border-slate-700'>Photo</th>
+                                <th className='border border-slate-700'>
+                                    Title
+                                </th>
+                                <th className='border border-slate-700'>
+                                    Photo
+                                </th>
                                 <th className='border border-slate-700'>
                                     Description
                                 </th>
@@ -54,8 +71,12 @@ const RetrieveCourses = () => {
                                 <th className='border border-slate-700'>
                                     Course Type
                                 </th>
-                                <th className='border border-slate-700'>Videos</th>
-                                <th className='border border-slate-700'>Action</th>
+                                <th className='border border-slate-700'>
+                                    Videos
+                                </th>
+                                <th className='border border-slate-700'>
+                                    Action
+                                </th>
                             </tr>
                         </thead>
 
