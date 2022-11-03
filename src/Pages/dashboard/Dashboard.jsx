@@ -13,7 +13,7 @@ function LinkTab(props) {
         (state) => [state.userProfile],
         shallow
     );
-    console.log(userProfile);
+    // console.log(userProfile);
     return (
         <Tab
             component='a'

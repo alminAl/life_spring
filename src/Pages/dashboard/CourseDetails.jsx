@@ -16,7 +16,7 @@ const CourseDetails = () => {
             );
             const data = await res.json();
             setCourse(data.courses);
-            console.log(course);
+            // console.log(course);
         };
         fetcher();
     }, [course, id]);
